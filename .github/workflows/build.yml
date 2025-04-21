@@ -3,6 +3,8 @@ name: Build Python App
 on:
   push:
     branches: [ main ]
+    # タグのプッシュもトリガーに追加する場合は、以下のようにタグを設定できます
+    # tags: ['v*']
 
 jobs:
   build:
@@ -30,5 +32,6 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: dist/main.exe
+        tag_name: v1.0.0  # リリースタグを指定
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
