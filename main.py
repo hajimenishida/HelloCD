@@ -1,4 +1,4 @@
-﻿#
+﻿##
 import tkinter as tk
 
 def say_hello():
